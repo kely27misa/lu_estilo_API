@@ -1,41 +1,84 @@
-# lu-estilo-api
+# Lu Estilo API
 
-🧵 **Lu Estilo API** — Uma API RESTful para gerenciamento de clientes, produtos e pedidos de uma loja de roupas, construída com **FastAPI + PostgreSQL + Docker**.
+API RESTful desenvolvida com FastAPI, PostgreSQL, SQLAlchemy, Pydantic, Docker e testada com Pytest. Criada como parte do desafio técnico para a InfoG2 (FIAP).
 
-## ✅ Tecnologias usadas
+---
 
-- FastAPI
-- SQLAlchemy
-- PostgreSQL
-- Pydantic
-- Docker + Docker Compose
-- Pytest
-- JWT Authentication
+## Funcionalidades implementadas
 
-## 📦 Estrutura atual do projeto
+- Autenticação com JWT:
+  - Registro de usuários (`/auth/register`)
+  - Login com geração de token (`/auth/login`)
+  - Proteção de rotas com permissões de admin e usuário
+- Clientes:
+  - Criar, listar, atualizar e deletar clientes
+  - Relacionamento com pedidos
+- Produtos:
+  - Cadastro com nome, descrição, preço, estoque, seção e validade
+- Pedidos:
+  - Criação de pedidos por usuários autenticados
+  - Verificação de estoque antes de registrar pedido
+  - Atualização de status (acesso restrito a admin)
+  - Cálculo automático de subtotal e total
+- Filtros na listagem de pedidos:
+  - Por cliente, status, ID, datas e seção do produto
+- Testes automatizados com Pytest
+- Banco de dados PostgreSQL com SQLAlchemy
+- Containerização com Docker
+- Documentação Swagger e Redoc
 
-- **Autenticação de usuários (admin e comum)**
-- **CRUD de Clientes**
-- **CRUD de Produtos**
-- **Criação de Pedidos**
-- **Atualização de status do pedido (admin)**
-- **Listagem de pedidos com filtros:**
-  - `status`
-  - `client_id`
-  - `order_id`
-  - `section`
-  - `start_date`, `end_date`
-- **Testes automatizados com Pytest**
+---
 
-## 🔍 Testes implementados
-
-- Login válido
-- Criação de pedido por usuário comum
-- Atualização de pedido por admin
-- Listagem de pedidos com filtros
-
-## 🧪 Como rodar os testes
+## Como rodar com Docker
 
 ```bash
-docker compose run --rm -e PYTHONPATH=/code tests
+docker compose up --build
+A API ficará disponível em: http://localhost:8000
+
+Documentação Swagger: http://localhost:8000/docs
+
+Como rodar os testes
+bash
+Copiar
+Editar
+docker compose run --rm tests
+Os testes cobrem:
+
+Autenticação e proteção de rotas
+
+Criação de pedidos e verificação de estoque
+
+Atualização de status de pedido
+
+Filtros por status, cliente, data e seção
+
+Estrutura do projeto
+bash
+Copiar
+Editar
+app/
+├── core/              # Segurança e configurações
+├── db/                # Sessão e conexão com o banco
+├── models/            # Modelos SQLAlchemy
+├── routes/            # Rotas organizadas por recurso
+├── schemas/           # Schemas Pydantic
+├── tests/             # Testes com Pytest
+└── main.py            # Aplicação FastAPI principal
+A fazer
+Paginação na listagem de pedidos
+
+Filtros adicionais na listagem de produtos
+
+Upload de imagens para produtos
+
+Deploy em nuvem (ex: Render, Railway)
+
+Integração contínua com GitHub Actions
+
+Logging estruturado
+
+Proteção contra brute-force ou rate limiting
+
+Desenvolvedora Kely dos santos
+Este projeto foi desenvolvido como parte do processo seletivo para a InfoG2, com foco em arquitetura limpa, autenticação segura e testes automatizados.
 ```
