@@ -1,6 +1,6 @@
 # Lu Estilo API
 
-API RESTful desenvolvida com FastAPI, PostgreSQL, SQLAlchemy, Pydantic, Docker e testada com Pytest. Criada como parte do desafio técnico para a InfoG2.
+API RESTful desenvolvida com FastAPI, PostgreSQL, SQLAlchemy, Pydantic, Docker e testada com Pytest. Criada como parte do desafio técnico para a InfoG2 (FIAP).
 
 ---
 
@@ -32,24 +32,10 @@ API RESTful desenvolvida com FastAPI, PostgreSQL, SQLAlchemy, Pydantic, Docker e
 ## Como rodar com Docker
 
 docker compose up --build
-A API ficará disponível em: http://localhost:8000
 
-Documentação Swagger: http://localhost:8000/docs
-
-Como rodar os testes
+## Como rodar os testes
 
 docker compose run --rm tests
-Os testes cobrem:
-
-Autenticação e proteção de rotas
-
-Criação de pedidos e verificação de estoque
-
-Atualização de status de pedido
-
-Filtros por status, cliente, data e seção
-
-Estrutura do projeto
 
 app/
 ├── core/ # Segurança e configurações
@@ -59,25 +45,3 @@ app/
 ├── schemas/ # Schemas Pydantic
 ├── tests/ # Testes com Pytest
 └── main.py # Aplicação FastAPI principal
-
-A fazer
-Paginação na listagem de pedidos
-
-Filtros adicionais na listagem de produtos
-
-Upload de imagens para produtos
-
-Deploy em nuvem (ex: Render, Railway)
-
-Integração contínua com GitHub Actions
-
-Logging estruturado
-
-Proteção contra brute-force ou rate limiting
-
-Desenvolvedora Kely dos santos
-Este projeto foi desenvolvido como parte do processo seletivo para a InfoG2, com foco em arquitetura limpa, autenticação segura e testes automatizados.
-
-```
-
-```
