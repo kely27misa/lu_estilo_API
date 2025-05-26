@@ -37,11 +37,13 @@ docker compose up --build
 
 docker compose run --rm tests
 
+```text
 app/
-├── core/ # Segurança e configurações
-├── db/ # Sessão e conexão com o banco
-├── models/ # Modelos SQLAlchemy
-├── routes/ # Rotas organizadas por recurso
-├── schemas/ # Schemas Pydantic
-├── tests/ # Testes com Pytest
-└── main.py # Aplicação FastAPI principal
+├── core/              Segurança e configurações
+├── db/                Sessão e conexão com o banco
+├── models/            Modelos SQLAlchemy
+├── routes/            Rotas organizadas por recurso
+├── schemas/           Schemas Pydantic
+├── tests/             Testes com Pytest
+└── main.py            Aplicação FastAPI principal
+```
