@@ -1,6 +1,6 @@
 # Lu Estilo API
 
-API RESTful desenvolvida com FastAPI, PostgreSQL, SQLAlchemy, Pydantic, Docker e testada com Pytest. Criada como parte do desafio técnico para a InfoG2 (FIAP).
+API RESTful desenvolvida com FastAPI, PostgreSQL, SQLAlchemy, Pydantic, Docker e testada com Pytest. Criada como parte do desafio técnico para a InfoG2 .
 
 ---
 
